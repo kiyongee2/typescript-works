@@ -1,0 +1,10 @@
+var a = 10;
+var msg = "I love you";
+var season = ["spring", "summber", "autumn", "winter"];
+console.log(a);
+console.log(msg);
+console.log(season);
+var array = [1, 2, 3, 4];
+var head = array[0], rest = array.slice(1);
+console.log(head);
+console.log.apply(console, rest);
