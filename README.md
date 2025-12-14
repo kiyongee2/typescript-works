@@ -4,6 +4,7 @@
 
 2. typescript 설치
    npm i -D typescript ts-node  //D → —save-dev
+   
 3 .tsonfig.json 만들기
    tsc —init
  
@@ -18,4 +19,4 @@
    touch src/index.ts  → git bash에서 실행
 
 #### 실행 - index.ts
-npm run dev
+  npm run dev
