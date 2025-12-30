@@ -1,33 +1,45 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Store from './components/Store'
+import type {Restaurant, Address}  from './model/Restaurant'
+import BestMenu from './components/BestMenu'
+
+let data: Restaurant = {
+  name: '형님네 식당',
+  category: 'western',
+  address:{
+    city: 'inchon',
+    detail: 'somewhere',
+    zipCode: 123456
+  },
+  menu: [
+    {name: "rose pasta", price: 3000, category: "PASTA"},
+    {name: "garlic steak", price: 4000, category: "PIZZA"},
+  ]
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [restaurant, setRestaurant] = useState<Restaurant>(data)
+
+  const changeAddress = (address: Address) => {
+    setRestaurant({...restaurant, address:address})
+  }
+
+  const showBestMenuName = (name: string) => {
+    return name;
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='App'>
+        <Store info={restaurant} changeAddress={changeAddress} />
+        <BestMenu 
+          name="불고기피자" 
+          category="피자" 
+          price={10000} 
+          showBestMenuName = {showBestMenuName}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
