@@ -1,3 +1,8 @@
+// class Dog{
+//   bark(){
+//     return "멍멍~"
+//   }
+// }
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -13,51 +18,39 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Dog = /** @class */ (function () {
-    function Dog() {
-    }
-    Dog.prototype.bark = function () {
-        return "멍멍~";
-    };
-    return Dog;
-}());
-var Cat = /** @class */ (function () {
-    function Cat() {
-    }
-    Cat.prototype.meow = function () {
-        return "야옹~";
-    };
-    return Cat;
-}());
-// let dog = new Dog();
-// dog.bark();
-//union type 활용
-function cry(animal) {
-    if (animal instanceof Dog) {
-        return animal.bark();
-    }
-    else {
-        return animal.meow();
-    }
-}
-var dog = new Dog();
-var cat = new Cat();
-console.log(cry(dog));
-console.log(cry(cat));
-//접근 제한자
-var Person = /** @class */ (function () {
-    //생성자
-    function Person(name) {
-        this.name = name;
-    }
-    Person.prototype.greet = function () {
-        console.log("Hello, ".concat(this.name));
-    };
-    return Person;
-}());
-var person = new Person("우영우");
-//person.name;  //접근 불가
-person.greet();
+// class Cat{
+//   meow(){
+//     return "야옹~"
+//   }
+// }
+// // let dog = new Dog();
+// // dog.bark();
+// //union type 활용
+// function cry(animal:Cat | Dog){
+//   if(animal instanceof Dog){
+//     return animal.bark();
+//   }else{
+//     return animal.meow();
+//   }
+// }
+// const dog = new Dog();
+// const cat = new Cat();
+// console.log(cry(dog));
+// console.log(cry(cat));
+// //접근 제한자
+// class Person{
+//   private name:string;
+//   //생성자
+//   constructor(name:string){
+//     this.name = name;
+//   }
+//   greet(){
+//     console.log(`Hello, ${this.name}`);
+//   }
+// }
+// let person = new Person("우영우");
+// //person.name;  //접근 불가
+// person.greet();
 //사람을 상속받은 학생
 var Car = /** @class */ (function () {
     function Car(model, year) {

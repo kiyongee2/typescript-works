@@ -48,40 +48,40 @@
 // //person.name;  //접근 불가
 // person.greet();
 
-// //사람을 상속받은 학생
-// class Car{
-//   protected model:string;
-//   protected year:number;
+//사람을 상속받은 학생
+class Car{
+  protected model:string;
+  protected year:number;
 
-//   constructor(model:string, year:number){
-//     this.model = model;
-//     this.year = year;
-//   }
+  constructor(model:string, year:number){
+    this.model = model;
+    this.year = year;
+  }
 
-//   showInfo(){
-//     console.log(`모델: ${this.model}, 연식: ${this.year}`);
+  showInfo(){
+    console.log(`모델: ${this.model}, 연식: ${this.year}`);
     
-//   }
-// }
+  }
+}
 
-// //차를 상속받은 전기차
-// class EV extends Car{
-//   private battery:number;
+//차를 상속받은 전기차
+class EV extends Car{
+  private battery:number;
 
-//   constructor(model:string, year:number, battery:number){
-//     super(model, year);
-//     this.battery = battery;
-//   }
+  constructor(model:string, year:number, battery:number){
+    super(model, year);
+    this.battery = battery;
+  }
 
-//   charge(amount:number){
-//     this.battery += amount;
-//     if(this.battery > 100)
-//       this.battery = 100;
-//     console.log(`배터리 잔량: ${this.battery}%`);
+  charge(amount:number){
+    this.battery += amount;
+    if(this.battery > 100)
+      this.battery = 100;
+    console.log(`배터리 잔량: ${this.battery}%`);
     
-//   }
-// }
+  }
+}
 
-// const ev = new EV("IONIC6", 2024, 70)
-// ev.showInfo();
-// ev.charge(50);
+const ev = new EV("IONIC6", 2024, 70)
+ev.showInfo();
+ev.charge(50);

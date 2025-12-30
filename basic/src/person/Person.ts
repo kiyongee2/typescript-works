@@ -1,5 +1,6 @@
 import { IPerson } from "./IPerson"
 
+//Person - IPerson을 구현한 클래스
 let MAX_AGE = 100
 
 export default class Person implements IPerson{
